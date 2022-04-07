@@ -1,21 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from "react-router";
-import { image_path, api_key } from '../../const';
+import { useAuthContext } from '../../contexts';
+import { image_path } from '../../const';
 
 const Movie = () => {
 
     let { id } = useParams();
-    const [movie, setMovie] = useState("");
-
-    function getMovieById() {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`)
-            .then(res => res.json())
-            .then(json => setMovie(json))
-            .catch(err => console.log(err))
-    }
+    let { movie, getMovieById } = useAuthContext();
 
     useEffect(() => {
-        getMovieById();
+        getMovieById(id);
     }, [])
 
     return (
