@@ -1,9 +1,10 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Context } from './contexts';
-import App from './App';
-import Movie from '../src/components/Movie';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Context } from "contexts";
+import App from "App";
+import Movie from "components/Movie";
+import "styles/global.sass";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

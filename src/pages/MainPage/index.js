@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import PopularMovies from '../../components/PopularMovies';
-import { useAuthContext } from "../../contexts";
-import { image_path } from '../../const';
+import { useEffect } from "react";
+import PopularMovie from "components/PopularMovie";
+import { useAuthContext } from "contexts";
+import "./style.sass";
 
 const MainPage = () => {
 
@@ -12,9 +12,15 @@ const MainPage = () => {
     }, [])
 
     return (
-        <div className="App">
-            <h1>MOST POPULAR</h1>
-            <PopularMovies movies={movies} image_path={image_path} />
+        <div className="main-page">
+            <h1>MOST POPULAR MOVIES</h1>
+            <div className="main-page__popular-movies">
+                {
+                    movies.map((movie) => {
+                        return <PopularMovie movie={movie} key={movie.id} />
+                    })
+                }
+            </div>
         </div >
     );
 }
