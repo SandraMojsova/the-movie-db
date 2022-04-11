@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  box-sizing: border-box; }
+
+img {
+  border-radius: 20px;
+  object-fit: cover; }
+
+.popularity {
+  background-color: #000;
+  color: #fff;
+  font: bold 16px Roboto;
+  border-radius: 50%;
+  border: 5px solid #006400;
+  padding: 15px; }
+
+.movie {
+  display: flex;
+  gap: 30px;
+  margin: 5%; }
+
+.movie__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; }
+
+.movie__genres {
+  text-align: center; }
+  .movie__genres h4 {
+    background: darkgrey;
+    padding: 5px; }
+
+.movie__tagline {
+  font: italic 17px Roboto; }
+
+.movie__wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  font: 16px bold; }
+  .movie__wrapper1 a {
+    text-decoration: none;
+    color: #006400; }
+
+.movie__overview {
+  font-size: 21px; }
+
+@media screen and (max-width: 576px) {
+  .movie {
+    flex-direction: column; }
+
+  .movie__wrapper {
+    justify-content: center; } }
+.popular-movie a {
+  text-decoration: none;
+  color: #000; }
+
+.popular-movie__card {
+  display: flex;
+  flex-direction: column; }
+
+.popularity.main-page {
+  margin-left: 20px; }
+
+.popular-movie__wrapper {
+  text-align: start;
+  margin-left: 20px; }
+  .popular-movie__wrapper h2 {
+    padding-top: 10px; }
+  .popular-movie__wrapper span {
+    font: normal 17px; }
+
+.main-page h1 {
+  text-align: center; }
+
+.main-page__popular-movies {
+  padding: 0 5%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  gap: 20px; }
+
+/*# sourceMappingURL=styles.css.map */

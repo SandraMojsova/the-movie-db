@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { image_path } from 'const';
-import './style.sass';
 
 const PopularMovie = ({ movie }) => {
     

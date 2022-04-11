@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Context } from "contexts";
 import App from "App";
 import Movie from "components/Movie";
-import "styles/global.sass";
+import "styles/styles.css";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

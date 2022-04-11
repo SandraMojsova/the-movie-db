@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
-import { useAuthContext } from "contexts";
+import { useMovieContext } from "contexts";
 import { image_path } from "const";
-import "./style.sass";
 
 const Movie = () => {
 
-    let { id } = useParams();
-    let { movie, getMovieById } = useAuthContext();
+    let { id } = useParams(); //useparams hook to extract the id from the url for each movie
+    let { movie, getMovieById } = useMovieContext(); // access the context value
 
     useEffect(() => {
         getMovieById(id);
@@ -33,7 +32,7 @@ const Movie = () => {
                 </div>
                 <p className="movie__tagline">{movie.tagline}</p>
                 <h3>0verview</h3>
-                <p>{movie.overview}</p>
+                <p className="movie__overview">{movie.overview}</p>
                 <div className="movie__wrapper1">
                     <span>Release date: {movie.release_date}</span>
                     <a href={movie.homepage}>Go to official website</a>

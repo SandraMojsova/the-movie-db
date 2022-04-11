@@ -1,0 +1,37 @@
+.movie
+    display: flex
+    gap: 30px
+    margin: 5%
+
+.movie__wrapper
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    gap: 20px
+
+.movie__genres
+    text-align: center
+    h4
+        background: darkgrey
+        padding: 5px
+
+.movie__tagline
+    font: italic 17px Roboto
+
+.movie__wrapper1
+    display: flex
+    justify-content: space-between
+    font: 16px bold
+    a
+        text-decoration: none
+        color: #006400
+
+.movie__overview
+    font-size: 21px
+
+@media screen and ( max-width: 576px )
+    .movie
+        flex-direction: column
+
+    .movie__wrapper
+        justify-content: center

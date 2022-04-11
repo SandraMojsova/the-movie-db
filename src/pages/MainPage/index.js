@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import PopularMovie from "components/PopularMovie";
-import { useAuthContext } from "contexts";
-import "./style.sass";
+import { useMovieContext } from "contexts";
 
 const MainPage = () => {
 
-    let { movies, getMovies } = useAuthContext();
+    let { movies, getMovies } = useMovieContext(); //access the context value
 
     useEffect(() => {
         getMovies();

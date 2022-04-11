@@ -1,22 +1,23 @@
 import React, { useState, useContext } from 'react';
 import { api } from 'const';
 
-export const AuthContext = React.createContext();
+export const MovieContext = React.createContext();
 
 export const Context = ({ children }) => {
 
     const [movies, setMovies] = useState([]);
     const [movie, setMovie] = useState({});
 
-
-    const getMovies = async()=> {
+    //Get a list of the current popular movies from api
+    const getMovies = async () => {
         await fetch(`${api.root}/popular?api_key=${api.key}&language=en-US&page=1`)
             .then(res => res.json())
             .then(json => setMovies(json.results))
             .catch(err => console.log(err))
     }
 
-    const getMovieById = async(id)=> {
+    //Get more information about a movie from api
+    const getMovieById = async (id) => {
         await fetch(`${api.root}/${id}?api_key=${api.key}&language=en-US`)
             .then(res => res.json())
             .then(json => setMovie(json))
@@ -24,12 +25,12 @@ export const Context = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ movie, movies, getMovies, getMovieById }}>
+        <MovieContext.Provider value={{ movie, movies, getMovies, getMovieById }}>
             {children}
-        </AuthContext.Provider>
+        </MovieContext.Provider>
     )
 }
 
-export const useAuthContext = () => {
-    return useContext(AuthContext);
+export const useMovieContext = () => {
+    return useContext(MovieContext);
 }
