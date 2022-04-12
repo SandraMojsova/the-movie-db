@@ -8,7 +8,7 @@ const PopularMovie = ({ movie }) => {
         <div className='popular-movie'>
             <Link to={`/movie/${movie.id}`}>
                 <div className="popular-movie__card">
-                    <div>
+                    <div className='popular-movie__image-box'>
                         <img src={`${image_path}${movie.poster_path} `} />
                         <span className='popularity main-page'>{Math.round(movie.popularity / 100)}%</span>
                     </div>

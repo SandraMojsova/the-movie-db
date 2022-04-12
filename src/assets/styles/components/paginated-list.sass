@@ -1,0 +1,32 @@
+.paginated-list__popular-movies
+    padding: 0 5%
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    gap: 20px
+
+.paginated-list
+    ul
+        margin-top: 80px
+        display: flex
+        justify-content: center
+        padding-left: 0
+        list-style: none
+        li
+            border: 1px solid grey
+            font-weight: bold
+            padding: 10px
+        li a
+            padding: 20px
+
+.active
+    color: #fff
+    background-color: #0073e6
+
+@media screen and ( max-width: 576px )
+    .paginated-list
+        ul
+            li
+                padding: 10px
+            li a
+                padding: 5px
